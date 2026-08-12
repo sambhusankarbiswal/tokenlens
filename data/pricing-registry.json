@@ -1,0 +1,51 @@
+[
+  {
+    "id": "openai.gpt-4o-mini",
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "displayName": "OpenAI GPT-4o mini",
+    "contextWindow": 128000,
+    "inputUsdPer1M": 0.15,
+    "outputUsdPer1M": 0.6,
+    "source": "MVP demo pricing registry - verify against provider pricing page before production use",
+    "lastUpdated": "2026-08-02",
+    "notes": "Used as the default demo model for TokenLens MVP."
+  },
+  {
+    "id": "anthropic.claude-sonnet-demo",
+    "provider": "anthropic",
+    "model": "claude-sonnet-demo",
+    "displayName": "Anthropic Claude Sonnet Demo",
+    "contextWindow": 200000,
+    "inputUsdPer1M": 3,
+    "outputUsdPer1M": 15,
+    "cachedInputUsdPer1M": 0.3,
+    "source": "MVP demo pricing registry - verify against provider pricing page before production use",
+    "lastUpdated": "2026-08-02",
+    "notes": "Demo placeholder to prove vendor-agnostic registry structure."
+  },
+  {
+    "id": "google.gemini-flash-demo",
+    "provider": "google",
+    "model": "gemini-flash-demo",
+    "displayName": "Google Gemini Flash Demo",
+    "contextWindow": 1000000,
+    "inputUsdPer1M": 0.35,
+    "outputUsdPer1M": 1.05,
+    "source": "MVP demo pricing registry - verify against provider pricing page before production use",
+    "lastUpdated": "2026-08-02",
+    "notes": "Demo placeholder to prove multi-provider architecture."
+  },
+  {
+    "id": "github-copilot.visible-prompt-estimate",
+    "provider": "github-copilot",
+    "model": "visible-prompt-estimate",
+    "displayName": "GitHub Copilot Visible Prompt Estimate",
+    "contextWindow": 128000,
+    "inputUsdPer1M": 0.15,
+    "outputUsdPer1M": 0.6,
+    "source": "MVP estimate only - does not represent official GitHub Copilot billing",
+    "lastUpdated": "2026-08-02",
+    "notes": "Used only to estimate visible prompt economics. Hidden Copilot context is not included."
+  }
+]

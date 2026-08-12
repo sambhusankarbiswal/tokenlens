@@ -1,0 +1,87 @@
+{
+  "name": "tokenlens",
+  "displayName": "TokenLens",
+  "description": "AI token economics and prompt cost optimizer for VS Code and GitHub Copilot workflows",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.103.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:tokenlens.analyzePrompt",
+    "onCommand:tokenlens.optimizePrompt",
+    "onCommand:tokenlens.openAdvisor",
+    "onChatParticipant:tokenlens.advisor"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "tokenlens.analyzePrompt",
+        "title": "TokenLens: Analyze Prompt"
+      },
+      {
+        "command": "tokenlens.optimizePrompt",
+        "title": "TokenLens: Optimize Prompt"
+      },
+      {
+        "command": "tokenlens.openAdvisor",
+        "title": "TokenLens: Open Advisor"
+      }
+    ],
+    "chatParticipants": [
+      {
+        "id": "tokenlens.advisor",
+        "name": "tokenlens",
+        "fullName": "TokenLens",
+        "description": "Estimate and optimize AI prompt cost before you send",
+        "isSticky": true,
+        "commands": [
+          {
+            "name": "analyze",
+            "description": "Estimate tokens and cost for a prompt"
+          },
+          {
+            "name": "optimize",
+            "description": "Rewrite prompt to reduce tokens while preserving intent"
+          },
+          {
+            "name": "budget",
+            "description": "Show local session budget and savings summary"
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "@types/sinon": "^22.0.0",
+    "@types/vscode": "^1.103.0",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.1.0",
+    "eslint": "^10.5.0",
+    "mocha": "^12.0.0-rc.5",
+    "sinon": "^22.1.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  },
+  "dependencies": {
+    "gpt-tokenizer": "^3.4.0",
+    "zod": "^4.4.3"
+  }
+}
